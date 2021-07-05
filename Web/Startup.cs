@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+
 namespace Web
 {
   public class Startup
@@ -55,6 +56,8 @@ namespace Web
       app.UseSpa(spa =>
       {
         spa.Options.SourcePath = "ClientApp";
+
+        // Development use webpack development server with Hot Module Replacement
         if (env.IsDevelopment())
         {
           spa.UseVueDevelopmentServer();
